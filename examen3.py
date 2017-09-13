@@ -1,0 +1,26 @@
+import numpy as np
+import matplotlib.pyplot as plt
+plt.figure('perrito',figsize=(10,10),dpi=100)
+plt.subplot(211)
+x=np.linspace(-np.pi,25,100,endpoint=True)
+E,D=3*np.cos(x) + 2014,1996+x
+plt.plot(x,E,color='#FF4000',linewidth=2,linestyle=':')
+plt.plot(x,D,color='#B7F24F',linewidth=2,linestyle=':')
+plt.subplot(212)
+plt.plot(x,E,color='#038787',linewidth=3,linestyle='-',marker='+',markersize=10)
+plt.xlim(-4,4)
+plt.xticks(np.arange(-4,4,1))
+plt.xlabel('ABC')
+plt.ylim(2011,2018)
+plt.yticks(np.arange(2011,2017,1))
+plt.ylabel('DEF')
+ax=plt.gca()
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+ax.xaxis.set_ticks_position('bottom')
+ax.spines['bottom'].set_position(('data',2014))
+ax.yaxis.set_ticks_position('left')
+ax.spines['left'].set_position(('data',0))
+plt.savefig('grafica3.png')
+plt.show()
+
